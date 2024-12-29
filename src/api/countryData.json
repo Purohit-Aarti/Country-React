@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "countryName": "India",
+    "capital": "New Delhi",
+    "population": 1400000000,
+    "interestingFact": "India is the world's largest democracy and has over 19,500 recognized languages and dialects."
+  },
+  {
+    "id": 2,
+    "countryName": "United States",
+    "capital": "Washington, D.C.",
+    "population": 331000000,
+    "interestingFact": "The United States is home to the world’s largest economy and the iconic Grand Canyon."
+  },
+  {
+    "id": 3,
+    "countryName": "Japan",
+    "capital": "Tokyo",
+    "population": 125000000,
+    "interestingFact": "Japan is known for having the oldest continuous hereditary monarchy in the world."
+  },
+  {
+    "id": 4,
+    "countryName": "Brazil",
+    "capital": "Brasília",
+    "population": 213000000,
+    "interestingFact": "Brazil is the largest coffee producer in the world."
+  },
+  {
+    "id": 5,
+    "countryName": "Australia",
+    "capital": "Canberra",
+    "population": 26000000,
+    "interestingFact": "Australia is the only continent covered by a single country."
+  },
+  {
+    "id": 6,
+    "countryName": "Canada",
+    "capital": "Ottawa",
+    "population": 38000000,
+    "interestingFact": "Canada has more lakes than the rest of the world combined."
+  },
+  {
+    "id": 7,
+    "countryName": "China",
+    "capital": "Beijing",
+    "population": 1440000000,
+    "interestingFact": "China is home to the Great Wall, the longest wall in the world."
+  },
+  {
+    "id": 8,
+    "countryName": "South Africa",
+    "capital": "Pretoria",
+    "population": 60000000,
+    "interestingFact": "South Africa has three capital cities and is known for its biodiversity."
+  },
+  {
+    "id": 9,
+    "countryName": "Russia",
+    "capital": "Moscow",
+    "population": 146000000,
+    "interestingFact": "Russia is the largest country in the world by land area."
+  },
+  {
+    "id": 10,
+    "countryName": "France",
+    "capital": "Paris",
+    "population": 67000000,
+    "interestingFact": "France is the most visited country in the world, attracting over 89 million tourists annually."
+  }
+]

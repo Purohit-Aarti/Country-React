@@ -77,7 +77,7 @@ button {
 /* Layout  */
 
 .container {
-  max-width: 120rem;
+  max-width: 100rem;
   margin: auto;
 }
 
@@ -240,6 +240,7 @@ nav ul {
   color: #fff;
   font-weight: 600;
   line-height: 60px;
+  margin-top: 40px;
 }
 
 .card {
@@ -252,10 +253,10 @@ nav ul {
 .container-card {
   position: relative;
   border: 2px solid transparent;
-  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background: linear-gradient(71deg, #080509, #434243, #2f2d30);
   background-clip: padding-box;
   border-radius: 45px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .bg-green-box,
