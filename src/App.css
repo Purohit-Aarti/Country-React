@@ -257,7 +257,10 @@ nav ul {
   background-clip: padding-box;
   border-radius: 45px;
   padding: 20px;
+  width: 100%;
+  margin: 5rem auto;
 }
+
 
 .bg-green-box,
 .bg-white-box,
@@ -395,13 +398,13 @@ country Card
 ------------------ */
 
 .country-card {
-  margin-top: 3.2rem;
+  margin-top: 0rem;
 }
 .country-section {
   margin: 6.4rem auto 9.6rem auto;
   & .grid {
     gap: 3.2rem;
-    max-width: 132rem;
+    max-width: 100rem;
     margin: auto;
   }
 
