@@ -456,6 +456,7 @@ country Card
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3.2rem;
+  margin-left: auto;
 
   & .container-card {
     padding: 0.8rem 2.4rem;
@@ -472,6 +473,8 @@ country Card
     border: 0.05rem solid #fff;
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
   }
+
+}
 
   & .select-section {
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
@@ -503,7 +506,7 @@ country Card
     border-radius: 5rem;
     margin-top: 1rem;
   }
-}
+
 
 ::placeholder {
   font-size: 1.6rem;
@@ -596,6 +599,7 @@ contact us Page ends here
   animation: l3 1s infinite linear;
   margin: auto;
   margin-top: 15rem;
+  margin-bottom: 100%;
 }
 @keyframes l3 {
   to {

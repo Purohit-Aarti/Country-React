@@ -1,4 +1,5 @@
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaAnglesRight } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 
 export default function HeroSection() {
@@ -12,9 +13,12 @@ export default function HeroSection() {
                     <p className="paragraph">
                         Discover the history, culture, and beauty of every nation. Sort, search, and filter through the world's countries and learn more about the places you've always wanted to visit.
                     </p>
-                    <button className="btn btn-darken btn-inline bg-white-box">
-                        Start Exploring <FaLongArrowAltRight />
-                    </button>
+                    <NavLink to="/Country" style={{textDecoration: "none"}}>
+                        <button className="btn btn-darken btn-inline bg-white-box">
+                            Start Exploring <FaAnglesRight />
+                        </button>
+                    </NavLink>
+                    
                 </div>
                 <div className="hero-image">
                     <img className="banner-image" src="/Images/world.png" alt="Hero" />

@@ -69,7 +69,8 @@ export default function CountryInfo () {
                   <span className="card-description"> Currencies: </span>
                   {Object.keys(country.currencies)
                     .map((curElem) => country.currencies[curElem].name)
-                    .join(", ")}
+                    .join(", ")
+                  }
                 </p>
                 <p>
                   <span className="card-description">Languages: </span>
