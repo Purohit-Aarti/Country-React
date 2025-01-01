@@ -365,7 +365,7 @@ ul {
 }
 .footer-section {
   background: #151414;
-  position: relative;
+  position: relative; 
 }
 
 .copyright-area {
@@ -417,7 +417,7 @@ country Card
 
 /* indivisual card container  */
 .country-details-card {
-  max-width: 100%;
+  max-width: 80%;
   margin: 6.4rem auto;
   box-shadow: rgba(168, 163, 184, 0.15) 0px 48px 100px 0px;
 
@@ -594,6 +594,8 @@ contact us Page ends here
   -webkit-mask-composite: source-out;
   mask-composite: subtract;
   animation: l3 1s infinite linear;
+  margin: auto;
+  margin-top: 15rem;
 }
 @keyframes l3 {
   to {

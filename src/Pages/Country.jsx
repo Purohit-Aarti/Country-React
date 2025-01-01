@@ -9,7 +9,7 @@ export default function Country () {
     const [countries, setCountries] = useState([]);
 
     // The data fetching and state update are wrapped in startTransition.
-// This marks the state update as a transition, allowing React to prioritize more urgent updates.
+    // This marks the state update as a transition, allowing React to prioritize more urgent updates.
     useEffect(() => {
         startTransition(async () => {
             const res = await getCountriesData();
@@ -18,7 +18,7 @@ export default function Country () {
         })
     }, []);
 
-    if (isPending) return <Loader />;
+    if (isPending) return <Loader />
 
     return (
         <section className="country-section">

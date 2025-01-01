@@ -1,4 +1,5 @@
-import { FaHandPointRight } from "react-icons/fa";
+import { FaAnglesRight } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 export default function CountryCard({ country }) {
     const {flags, name, capital, region, population} = country;
@@ -22,8 +23,9 @@ export default function CountryCard({ country }) {
                         <span className="card-description">Capital:</span>
                         {capital[0]}
                     </p>
-                    <button>Read More <FaHandPointRight />
-                    </button>
+                    <NavLink to={`/Country/${name.common}`} style={{textDecoration: "none"}}>
+                        <button>Read More <FaAnglesRight /></button>
+                    </NavLink>
                 </div>
             </div>
         </li>

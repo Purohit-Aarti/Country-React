@@ -3,7 +3,6 @@ import { TbMailPlus } from "react-icons/tb";
 import { IoCallSharp } from "react-icons/io5";
 import { MdPlace } from "react-icons/md";
 
-    
 
 const Footer = () => {
 
@@ -12,10 +11,10 @@ const Footer = () => {
         IoCallSharp: <IoCallSharp />,
         TbMailPlus: <TbMailPlus />,
     }
-
+    
     return (
         <>
-            <footer className="footer-section">
+            <footer className="footer-section" style={{position: "relative", bottom: "0"}}>
                 <div className="container grid grid-three-cols">
                     {
                         FooterAPI.map((item, index) => {
@@ -38,5 +37,4 @@ Usage: It is used to dynamically access a property of an object based on the val
         </>
     );
 };
-
 export default Footer;
