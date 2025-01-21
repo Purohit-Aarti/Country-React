@@ -15,7 +15,7 @@ const Footer = () => {
     return (
         <>
             <footer className="footer-section" style={{position: "relative", bottom: "0"}}>
-                <div className="container grid grid-three-cols">
+                <div className="container grid grid-three-cols footer-Contact-Container">
                     {
                         FooterAPI.map((item, index) => {
                             const {icon, title, details} = item;

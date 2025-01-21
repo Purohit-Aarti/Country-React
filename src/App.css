@@ -322,6 +322,7 @@ nav ul {
 .footer-contact {
   height: 10rem;
   display: flex;
+  width: 90%;
   gap: 2.4rem;
   align-items: center;
 
@@ -350,6 +351,21 @@ nav ul {
     font-weight: bold;
     color: #fff;
   }
+}
+
+.footer-Contact-Container {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+@media screen and (max-width: 768px) {
+  .footer-Contact-Container {
+    flex-direction: column;
+  }
+  
 }
 
 .footer-menu {
@@ -383,7 +399,7 @@ ul {
 }
 .footer-menu li {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 2c0px;
 }
 .footer-menu li:hover a {
   color: #3a4ed5;
@@ -453,6 +469,7 @@ country Card
 .section-searchFilter {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3.2rem;
@@ -526,6 +543,7 @@ contact us page
     border-color: rgba(255, 255, 255, 0.6);
   }
 }
+
 .contact-wrapper {
   display: flex;
   justify-content: center;
@@ -534,8 +552,8 @@ contact us page
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
-    width: 100%;
-    max-width: 48rem;
+    width: 90%;
+    max-width: 50rem;
 
     & input,
     & textarea {

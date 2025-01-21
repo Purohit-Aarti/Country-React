@@ -46,7 +46,6 @@
 
 // new react version-19 way:
 
-
 export default function Contact () {
 
     const handleFormSubmit = (formData) => {

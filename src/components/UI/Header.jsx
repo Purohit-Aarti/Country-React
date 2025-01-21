@@ -6,8 +6,12 @@ const Header = () => {
     const [show, setShow] = useState(false);
 
     const handleButtonToggle = () => {
-        return setShow(!show);
-    }
+        setShow(!show);
+    };
+
+    const handleMenuItemClick = () => {
+        setShow(false);
+    };
 
     return (
         <header>
@@ -15,21 +19,21 @@ const Header = () => {
                 <div className="grid navbar-grid">
                     <div className="Logo">
                         <NavLink to="/">
-                            <h1>WorldExplorer</h1>
+                            <h1 onClick={handleMenuItemClick}>WorldExplorer</h1>
                         </NavLink>
                     </div>
                     <nav className={show ? "menu-mobile" : "menu-web"}>
                         <ul>
-                            <li>
+                            <li onClick={handleMenuItemClick}>
                                 <NavLink to="/">Home</NavLink>
                             </li>
-                            <li>
+                            <li onClick={handleMenuItemClick}>
                                 <NavLink to="/About">About</NavLink>
                             </li>
-                            <li>
+                            <li onClick={handleMenuItemClick}>
                                 <NavLink to="/Contact">Contact</NavLink>
                             </li>
-                            <li>
+                            <li onClick={handleMenuItemClick}>
                                 <NavLink to="/Country">Country</NavLink>
                             </li>
                         </ul>
