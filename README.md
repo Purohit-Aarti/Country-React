@@ -1,91 +1,107 @@
-# Country Component Explanation
+# WorldExplorer
 
-This document explains the roles of the hooks used in the `Country` component and their differences.
+WorldExplorer is a React application that allows users to explore information about different countries. The application includes features such as a search filter, a mobile-friendly navigation menu, and detailed country information.
 
-## File Path
+## Table of Contents
 
-`/c:/Users/dell/OneDrive/Desktop/My-Projects/Country_React/src/Pages/Country.jsx`
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Components](#components)
+  - [Header](#header)
+  - [SearchFilter](#searchfilter)
+  - [Country](#country)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code Overview
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/WorldExplorer.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd WorldExplorer
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+## Usage
+
+1. Start the development server:
+    ```sh
+    npm start
+    ```
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Features
+
+- **Responsive Design**: The application is mobile-friendly with a responsive navigation menu.
+- **Search and Filter**: Users can search for countries and filter them by region.
+- **Detailed Information**: Provides detailed information about each country.
+
+## Components
+
+### Header
+
+The `Header` component contains the navigation menu, including links to different pages and a hamburger menu for mobile view.
+
+#### Code Example
 
 ```jsx
-import { useEffect, useState, useTransition } from "react";
-import { getCountriesData } from "../api/postApi";
-import CountryCard from "../components/Layouts/CountryCard";
-import Loader from "../components/UI/Loader";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
 
-export default function Country() {
-    const [isPending, startTransition] = useTransition();
-    const [countries, setCountries] = useState([]);
+const Header = () => {
+    const [show, setShow] = useState(false);
 
-    // The data fetching and state update are wrapped in startTransition.
-    // This marks the state update as a transition, allowing React to prioritize more urgent updates.
-    useEffect(() => {
-        startTransition(async () => {
-            const res = await getCountriesData();
-            console.log(res.data);
-            setCountries(res.data);
-        });
-    }, []);
+    const handleMenuItemClick = () => {
+        setShow(false);
+    };
 
-    if (isPending) return <Loader />;
+    const handleButtonToggle = () => {
+        setShow(!show);
+    };
 
     return (
-        <section className="country-section">
-            <ul className="grid grid-four-cols">
-                {countries.map((country, index) => (
-                    <CountryCard country={country} key={index} />
-                ))}
-            </ul>
-        </section>
+        <header>
+            <div className="container">
+                <div className="grid navbar-grid">
+                    <div className="Logo">
+                        <NavLink to="/">
+                            <h1 onClick={handleMenuItemClick}>WorldExplorer</h1>
+                        </NavLink>
+                    </div>
+                    <nav className={show ? "menu-mobile" : "menu-web"}>
+                        <ul>
+                            <li onClick={handleMenuItemClick}>
+                                <NavLink to="/">Home</NavLink>
+                            </li>
+                            <li onClick={handleMenuItemClick}>
+                                <NavLink to="/About">About</NavLink>
+                            </li>
+                            <li onClick={handleMenuItemClick}>
+                                <NavLink to="/Contact">Contact</NavLink>
+                            </li>
+                            <li onClick={handleMenuItemClick}>
+                                <NavLink to="/Country">Country</NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className="ham-menu">
+                        <button onClick={handleButtonToggle}><GiHamburgerMenu /></button>
+                    </div>
+                </div>
+            </div>
+        </header>
     );
-}
+};
 
-
-Hooks Used
-useState
-Purpose: useState is a hook that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that state.
-
-Usage in Your Code:
-
-const [countries, setCountries] = useState([]);
-
-countries: The current state value, initialized as an empty array. This state will hold the list of countries fetched from the API.
-setCountries: The function to update the countries state. You call this function with the new state value to update the state.
-useEffect
-Purpose: useEffect is a hook that allows you to perform side effects in functional components. Side effects can include data fetching, subscriptions, or manually changing the DOM. The useEffect hook runs after the component renders.
-
-Usage in Your Code:
-
-useEffect(() => {
-    startTransition(async () => {
-        const res = await getCountriesData();
-        console.log(res.data);
-        setCountries(res.data);
-    });
-}, []);
-
-Effect Function: The function inside useEffect is executed after the component mounts. In this case, it fetches data from the API and updates the countries state.
-Dependencies Array: The empty array [] ensures that the effect runs only once after the initial render.
-useTransition
-Purpose: useTransition is a hook that allows you to mark state updates as non-urgent. It helps manage transitions and handle pending states, keeping the UI responsive during state updates that might take some time.
-
-Usage in Your Code:
-
-const [isPending, startTransition] = useTransition();
-
-isPending: A boolean value that indicates whether the transition is currently in progress. You can use this to show a loading indicator or some other feedback to the user while the transition is happening.
-startTransition: A function that you use to wrap the state updates you want to mark as non-urgent. When you call startTransition, React will prioritize more urgent updates (like user interactions) and defer the transition updates.
-How They Work Together
-State Management with useState:
-
-useState is used to manage the countries state, which holds the list of countries fetched from the API.
-Performing Side Effects with useEffect:
-
-useEffect is used to perform the side effect of fetching data from the API when the component mounts. The fetched data is then used to update the countries state.
-Managing Transitions with useTransition:
-
-useTransition is used to mark the state update for fetching data as a transition. This helps keep the UI responsive by deferring the non-urgent state update until more urgent updates are handled.
+export default Header;
 isPending is used to conditionally render the Loader component while the data is being fetched.
 Summary
 useState: Manages state in functional components. In your code, it manages the countries state.
