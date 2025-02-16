@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # WorldExplorer
 
 WorldExplorer is a React application that allows users to explore information about different countries. The application includes features such as a search filter, a mobile-friendly navigation menu, and detailed country information.
@@ -10,17 +8,15 @@ WorldExplorer is a React application that allows users to explore information ab
 - [Usage](#usage)
 - [Features](#features)
 - [Components](#components)
-  - [Header](#header)
-  - [SearchFilter](#searchfilter)
-  - [Country](#country)
 - [Contributing](#contributing)
 - [License](#license)
+- [Deployed Link](#deployed-link)
 
 ## Installation
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/WorldExplorer.git
+    git clone https://github.com/Purohit-Aarti/Country-React
     ```
 2. Navigate to the project directory:
     ```sh
@@ -35,7 +31,7 @@ WorldExplorer is a React application that allows users to explore information ab
 
 1. Start the development server:
     ```sh
-    npm start
+    npm run dev
     ```
 2. Open your browser and navigate to `http://localhost:3000`.
 
@@ -47,67 +43,20 @@ WorldExplorer is a React application that allows users to explore information ab
 
 ## Components
 
-### Header
+- **Header**: Contains the navigation menu, including links to different pages and a hamburger menu for mobile view.
+- **SearchFilter**: Allows users to search for countries by name and filter them by region.
+- **Country**: Fetches and displays a list of countries. Users can search and filter the list.
 
-The `Header` component contains the navigation menu, including links to different pages and a hamburger menu for mobile view.
+For more details, please refer to the source code in the `src/components` directory.
 
-#### Code Example
+## Contributing
 
-```jsx
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
 
-const Header = () => {
-    const [show, setShow] = useState(false);
+## License
 
-    const handleMenuItemClick = () => {
-        setShow(false);
-    };
+This project is licensed under the MIT License.
 
-    const handleButtonToggle = () => {
-        setShow(!show);
-    };
+## Deployed Link
 
-    return (
-        <header>
-            <div className="container">
-                <div className="grid navbar-grid">
-                    <div className="Logo">
-                        <NavLink to="/">
-                            <h1 onClick={handleMenuItemClick}>WorldExplorer</h1>
-                        </NavLink>
-                    </div>
-                    <nav className={show ? "menu-mobile" : "menu-web"}>
-                        <ul>
-                            <li onClick={handleMenuItemClick}>
-                                <NavLink to="/">Home</NavLink>
-                            </li>
-                            <li onClick={handleMenuItemClick}>
-                                <NavLink to="/About">About</NavLink>
-                            </li>
-                            <li onClick={handleMenuItemClick}>
-                                <NavLink to="/Contact">Contact</NavLink>
-                            </li>
-                            <li onClick={handleMenuItemClick}>
-                                <NavLink to="/Country">Country</NavLink>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className="ham-menu">
-                        <button onClick={handleButtonToggle}><GiHamburgerMenu /></button>
-                    </div>
-                </div>
-            </div>
-        </header>
-    );
-};
-
-export default Header;
-isPending is used to conditionally render the Loader component while the data is being fetched.
-Summary
-useState: Manages state in functional components. In your code, it manages the countries state.
-useEffect: Performs side effects in functional components. In your code, it fetches data from the API when the component mounts.
-useTransition: Manages transitions and handles pending states. In your code, it marks the state update for fetching data as a transition and provides a way to show a loading indicator while the transition is in progress.
-By using these hooks together, you can manage state, perform side effects, and handle transitions in a way that keeps your component responsive and maintainable.
->>>>>>> c63403c1e01f450a7415d8725a195b0833944eac
+Check out the live application [WorldExplorer](https://reactjsworldexplorer.netlify.app/).
